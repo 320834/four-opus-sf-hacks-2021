@@ -27,13 +27,16 @@ Windows
 Linux/MacOS
 1. source venv/bin/activate
 
-2. install packages: pip install -r requirements.txt
-3. Should you install a pip package, update requirements.txt with: pip freeze > requirements.txt
-4. push requirements.txt to repo
+3. cd backend
+4. pip install -r requirements.txt (install packages)
+5. pip freeze > requirements.txt (Should you install a pip package, update requirements.txt)
+6. push requirements.txt to repo
 
 **Flask**
 
 **Run flask Linux**
+
+cd backend
 
 export FLASK_APP=flaskr
 
@@ -43,8 +46,12 @@ flask run
 
 **Run flask windows**
 
-set FLASK_APP=flaskr
+cd backend
+_for command prompt_:
+`set FLASK_APP=flaskr`
+`set FLASK_ENV=development`
+$env:FLASK_APP= "flaskr"
 
-set FLASK_ENV=development
+$env:FLASK_ENV= "development"
 
 flask run
