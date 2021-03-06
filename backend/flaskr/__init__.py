@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template, request
 
 
 def create_app(test_config=None):
@@ -24,9 +24,10 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/index')
-    def hello():
-        return 'This is the index page'
+    # Landing page for the app
+    @app.route('/') # default route
+    def new():
+        score = ""
+        return render_template('index.html', score = score) # Renders template: index.html with argument score = ""
 
     return app
