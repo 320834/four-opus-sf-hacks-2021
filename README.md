@@ -1,4 +1,5 @@
 # four-opus-sf-hacks-2021
+
 SF-Hacks 2021 for team four opus
 
 # Installation
@@ -7,51 +8,29 @@ SF-Hacks 2021 for team four opus
 
 **Install npm, node, and python**
 
-1. cd maybel
-2. yarn 
-3. yarn start
+1. `cd maybel`
+2. `yarn`
+3. `yarn start`
 
 ## Backend (Python Flask)
 
-**Virtual env setup**
+**Setting Up a virtual environment**
 
-If first time, create virtual environment in root directory
+1. Create a virutal environment with: `python3 -m venv venv` at the root directory
+2. Activate virutal environment
+   - _For Windows_ : `venv\Scripts\activate.bat`
+   - _Linux/MacOS_ : `source venv/bin/activate`
+3. Install required pacakges with: `pip install -r requirements.txt`
+4. Should you install a pip package, update `requirements.txt` with: `pip freeze > requirements.txt`
+5. After updating `requirements.txt`, push file to repo
 
-1. python3 -m venv venv
+**Running the flask app**
 
-To activate
-
-Windows
-1. venv\Scripts\activate.bat
-
-Linux/MacOS
-1. source venv/bin/activate
-
-3. cd backend
-4. pip install -r requirements.txt (install packages)
-5. pip freeze > requirements.txt (Should you install a pip package, update requirements.txt)
-6. push requirements.txt to repo
-
-**Flask**
-
-**Run flask Linux**
-
-cd backend
-
-export FLASK_APP=flaskr
-
-export FLASK_ENV=development
-
-flask run
-
-**Run flask windows**
-
-cd backend
-_for command prompt_:
-`set FLASK_APP=flaskr`
-`set FLASK_ENV=development`
-$env:FLASK_APP= "flaskr"
-
-$env:FLASK_ENV= "development"
-
-flask run
+1. `cd backend`
+2. Declare environment variables for Flask:
+   - _For Windows_:
+     - Command Prompt : `export FLASK_APP=flaskr` and `export FLASK_ENV=development`
+     - Power Shell : `$env:FLASK_APP= "flaskr"` and `$env:FLASK_ENV= "development"`
+   - _For Linux/MacOS_:
+     - `export FLASK_APP=flaskr` and `export FLASK_ENV=development`
+3. Run Flask app with: `flask run`
