@@ -1,7 +1,7 @@
 import os
 
-from flask import Flask
-
+from flask import Flask, render_template, request
+from flaskr.sentiment import sentiment_score
 
 def create_app(test_config=None):
     # create and configure the app
@@ -24,9 +24,22 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/index')
-    def hello():
-        return 'This is the index page'
+    # Landing page for the app
+    @app.route('/') # default route
+    def new():
+        score = ""
+        return render_template('index.html', score=score) # Renders template: index.html with argument score = ""
+
+    # Test page to return sentiment score based on text input
+    @app.route('/sentiment', methods = ('GET', 'POST')) # /sentiment route, allowed request methods: POST, and GET
+    def getSentiment():  # The getSentiment view
+        if request.method == 'POST':
+            text = request.form['text']  # Fetches data from <input name='text'> from index.html
+            score = sentiment_score(text)
+            
+            return render_template('index.html', score=score)
+
+        else:
+            return render_template('index.html')
 
     return app

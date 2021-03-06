@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VADER Sentiment Analysis</title>
+  </head>
+  <body>
+    <!-- defines onClick redirect route, method of request -->
+    <form action="/sentiment" method="POST">
+      <!-- name="text" is used in Flask to fetch input using request.form -->
+      <input type="text" name="text" />
+      <!-- submit event -->
+      <input type="submit" name="submit" />
+      <!-- use jinja template variable. score is passed an an argument while rendering template -->
+      <h2>Polarity Score: {{ score }}</h2>
+    </form>
+  </body>
+</html>
