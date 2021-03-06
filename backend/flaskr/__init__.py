@@ -1,8 +1,8 @@
 import os
-import json
-
-from flask import Flask, render_template, request, jsonify, make_response
+import requests, json
+from flask import Flask, render_template, request
 from flaskr.sentiment import sentiment_score
+from flaskr.quotes import create_quote
 
 def create_app(test_config=None):
     # create and configure the app
@@ -37,8 +37,9 @@ def create_app(test_config=None):
         if request.method == 'POST':
             text = request.form['text']  # Fetches data from <input name='text'> from index.html
             score = sentiment_score(text)
+            quote = create_quote(score)
             
-            return render_template('index.html', score=score)
+            return render_template('index.html', score=score, quote=quote)
 
         else:
             return render_template('index.html')
