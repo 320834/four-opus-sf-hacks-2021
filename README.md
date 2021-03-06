@@ -18,6 +18,7 @@ SF-Hacks 2021 for team four opus
 If first time, create virtual environment in root directory
 
 1. python3 -m venv venv
+(Pro tip: if that doesn't work, try using py instead!)
 
 To activate
 
