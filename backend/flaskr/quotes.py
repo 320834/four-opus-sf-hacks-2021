@@ -18,7 +18,7 @@ def create_quote(score):
     elif score >= 0  and score < .5:
         tag = "happy"
     else:
-        tag = "sucess"
+        tag = "success"
     PAPERQUOTES_API_ENDPOINT = 'http://api.paperquotes.com/apiv1/quotes/?tags='+ tag + '&random=random&order=?'
     response = requests.get(PAPERQUOTES_API_ENDPOINT, headers={'Authorization': 'TOKEN {}'.format(TOKEN)})
 

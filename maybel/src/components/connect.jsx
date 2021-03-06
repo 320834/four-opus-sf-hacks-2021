@@ -1,13 +1,16 @@
 import React from 'react';
 import BASE_URI from "../misc/setup";
 
-export default class Main extends React.Component {
+import "./styles/connect.css"
+
+export default class Connect extends React.Component {
     constructor(props)
     {
         super(props)
         this.state = {
-        text: "",
-        result: ""
+            text: "",
+            score: "",
+            quote: ""
         }
     }
 
@@ -25,11 +28,12 @@ export default class Main extends React.Component {
           body: raw,
         };
 
+        //BASE_URI defined in misc/setup.js
         fetch(`${BASE_URI}/sentiment-json`, requestOptions)
           .then(res => res.json())
           .then((data) => {
             console.log(data)
-
+            this.setState({score: data["score"], quote: data["quote"]})
           })
           .catch((error) => {
               console.log(error)
@@ -39,10 +43,13 @@ export default class Main extends React.Component {
 
     render()
     {
-        return(<div>
-            <input type="text" onChange={(event) => {this.setState({text: event.target.value})}} name="name" />
-            <button onClick={this.getSentiment}>Submit</button>
-            <div>{this.state.result}</div>
+        return(<div className="connect-root">
+            <div>
+                <h3>Tell us more about your day</h3>
+                <input type="text" onChange={(event) => {this.setState({text: event.target.value})}} name="name" />
+                <button onClick={this.getSentiment}>Submit</button>
+                <div>{this.state.quote}</div>
+            </div>
         </div>)
     }
 }

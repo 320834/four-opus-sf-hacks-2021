@@ -1,13 +1,12 @@
 import React from 'react';
-import Main from "./components/main";
+import Connect from "./components/connect";
 
 class App extends React.Component {
 
-  
 
   render()
   {
-    return (<Main></Main>)
+    return (<Connect></Connect>)
   }
 }
 
