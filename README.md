@@ -4,6 +4,10 @@ SF-Hacks 2021 for team four opus
 
 # Installation
 
+**Environment Variables**
+
+Make sure to add two .env files. One in root directory of backend and the other in frontend. 
+
 ## Frontend (React)
 
 **Install npm, node, and python**
