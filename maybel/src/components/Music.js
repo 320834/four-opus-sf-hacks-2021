@@ -8,6 +8,8 @@ import {
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
+import "./styles/music.css";
+
 import chillHop from "../data";
 
 const Music = () => {
@@ -71,19 +73,19 @@ const Music = () => {
     <div className="player">
       <div className="play-control">
         <FontAwesomeIcon
-          className="skip-back"
+          className="skip-back btn"
           size="2x"
           icon={faAngleLeft}
           onClick={() => skipHandler("back")}
         />
         <FontAwesomeIcon
           onClick={playSongHandler}
-          className="play"
+          className="play btn"
           size="2x"
           icon={isPlaying ? faPause : faPlay}
         />
         <FontAwesomeIcon
-          className="skip-forward"
+          className="skip-forward btn"
           size="2x"
           icon={faAngleRight}
           onClick={() => skipHandler("forward")}
