@@ -25,10 +25,11 @@ def create_quote(score):
     response = requests.get(PAPERQUOTES_API_ENDPOINT, headers={'Authorization': 'TOKEN {}'.format(TOKEN)})
 
     if response.ok:
-
         quote = json.loads(response.text).get('results')
 
         return random.choice(quote).get('quote')
+    else:
+        return "The world is full of wonders. Sometimes it takes time to see it all"
 
 if __name__ == "__main__":
     main()
