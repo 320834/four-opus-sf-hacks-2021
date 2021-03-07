@@ -8,6 +8,8 @@ import {
   faAngleRight,
 } from "@fortawesome/free-solid-svg-icons";
 
+import "./styles/music.css";
+
 import chillHop from "../data";
 
 const Music = () => {

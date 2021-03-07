@@ -75,7 +75,7 @@ export default class Connect extends React.Component {
     return (
       <div className="connect-root">
         <div>
-          <h4 style={{ paddingTop: "50vh", color: "rgba(2, 190, 165, 1)" }}>
+          <h4 style={{ color: "rgba(2, 190, 165, 1)" }}>
             Tell us about your day
           </h4>
           <input
