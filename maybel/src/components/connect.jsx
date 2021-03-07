@@ -16,7 +16,6 @@ export default class Connect extends React.Component {
 
   styles = {
     width: 600,
-    borderColor: "transparent",
     defaultValue: "Hmm..",
     fontSize: 50,
     backgroundColor: "transparent",
@@ -75,12 +74,10 @@ export default class Connect extends React.Component {
     return (
       <div className="connect-root">
         <div>
-          <h4 style={{ color: "rgba(2, 190, 165, 1)" }}>
-            Tell us about your day
-          </h4>
+          <h4>Tell us about your day</h4>
           <input
             type="text"
-            placeholder="Try typing your feelings here"
+            placeholder="Type your feelings here"
             onKeyDown={this.enterKey}
             onChange={(event) => {
               this.setState({ text: event.target.value });

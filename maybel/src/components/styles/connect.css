@@ -12,6 +12,13 @@
   align-items: center;
 }
 
+input {
+  border-bottom-color: white;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
 input:focus::placeholder {
   color: transparent;
 }
@@ -19,4 +26,22 @@ input:focus::placeholder {
 h4 {
   border: none;
   padding: 0;
+  color: white;
+}
+
+button {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.883);
+  border: 2px solid rgba(255, 255, 255, 0.883);
+  font-size: 30px;
+  border-radius: 5px;
+  padding: 0 20px;
+}
+
+button:hover {
+  color: white;
+  border-color: white;
+  transform: scale(1.1, 1.1);
+  -webkit-transform: scale(1.1, 1.1);
+  -moz-transform: scale(1.1, 1.1);
 }
