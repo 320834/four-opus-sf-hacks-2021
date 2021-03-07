@@ -6,7 +6,7 @@ SF-Hacks 2021 for team four opus
 
 **Environment Variables**
 
-Make sure to add two .env files. One in root directory of backend and the other in frontend. 
+Make sure to add two .env files. One in root directory of backend and the other in frontend.
 
 ## Frontend (React)
 
@@ -38,3 +38,13 @@ Make sure to add two .env files. One in root directory of backend and the other 
    - _For Linux/MacOS_:
      - `export FLASK_APP=flaskr` and `export FLASK_ENV=development`
 3. Run Flask app with: `flask run`
+
+## Acknowledgements
+
+# Music
+
+All music come from [ChillHop](https://chillhop.com/).
+
+# Photos
+
+All photos are hosted open-source from this [collection](https://unsplash.com/collections/2194996/june-2018) on [Unsplash](https://unsplash.com/).

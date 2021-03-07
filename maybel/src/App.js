@@ -1,9 +1,15 @@
 import React from "react";
 import Connect from "./components/connect";
+import Music from "./components/Music";
 
 class App extends React.Component {
   render() {
-    return <Connect></Connect>;
+    return (
+      <div class="app">
+        <Music></Music>
+        <Connect></Connect>
+      </div>
+    );
   }
 }
 
