@@ -18,7 +18,7 @@ export default class Connect extends React.Component {
     width: 600,
     borderColor: "transparent",
     defaultValue: "Hmm..",
-    fontSize: 50,
+    fontSize: 45,
     backgroundColor: "transparent",
     outline: "none",
     marginLeft: "auto",
@@ -47,13 +47,15 @@ export default class Connect extends React.Component {
     }
   };
   getSentiment = async () => {
+
+    // this.setState({result: ""});
     let myHeaders = new Headers();
     myHeaders.append("content-type", "application/json");
     myHeaders.append("Access-Control-Allow-Origin", "localhost:5000");
 
-    let raw = JSON.stringify({ text: this.state.text });
+    const raw = JSON.stringify({ text: this.state.text });
 
-    let requestOptions = {
+    const requestOptions = {
       method: "POST",
       headers: myHeaders,
       body: raw,
@@ -91,7 +93,7 @@ export default class Connect extends React.Component {
           <button onClick={this.getSentiment} type="button">
             Enter
           </button>
-          <div>{this.state.quote}</div>
+          <div className="connect-quote fade-in"><b>{this.state.quote}</b></div>
         </div>
       </div>
     );
