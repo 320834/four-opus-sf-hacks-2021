@@ -11,6 +11,7 @@ export default class Connect extends React.Component {
       text: "",
       score: "",
       quote: "",
+      resources: []
     };
   }
 
@@ -40,12 +41,10 @@ export default class Connect extends React.Component {
   getSentiment = async () => {
 
     // Reset quote and input text
-    this.setState({quote: "", text: ""}, () => {
+    this.setState({quote: "", resources: []}, () => {
 
-      //Delay by 4 ms
-      setTimeout(() => {
         callApi();
-      }, 400)
+
     });
 
     const callApi = () => {
@@ -66,13 +65,28 @@ export default class Connect extends React.Component {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          this.setState({ score: data["score"], quote: data["quote"] });
+          this.setState({ score: data["score"], quote: data["quote"], text: "", resources: data["resources"] }, () => {
+            this.displayResources();
+          });
         })
         .catch((error) => {
           console.log(error);
         });
       }
   };
+
+  displayResources = () => {
+    if(this.state.resources.length > 0)
+    {
+        let stringResources = ""
+        
+        this.state.resources.forEach((value) => {
+          stringResources += value + "\n"
+        })
+
+        alert(`We hope you are doing fine. Please take care of yourself and do not hesitate to get help. More info in the links below\n${stringResources}`)
+    }
+  }
 
   render() {
     return (
@@ -97,6 +111,7 @@ export default class Connect extends React.Component {
             <b>
               <TextTransition
                 text={this.state.quote}
+                style={{textAlign: "center"}}
               >
               </TextTransition>
             </b>
