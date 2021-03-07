@@ -62,9 +62,11 @@ def create_app(test_config=None):
 
         return make_response(jsonify(score=0), 301)
 
+
     @app.route('/chatbox', methods=['GET', 'POST'])
     def chatbox():
         return render_template('chatbox.html')
+
 
     @app.route('/webhook', methods=['POST'])
     def webhook():
@@ -80,6 +82,7 @@ def create_app(test_config=None):
                 "fulfillmentText": "Okay. Simply cheering you on.",
             }
             return jsonify(reply)
+
 
     @app.route('/send_message', methods=['POST'])
     def send_message():

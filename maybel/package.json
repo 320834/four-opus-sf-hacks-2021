@@ -12,7 +12,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "REACT_APP_STAGE=dev react-scripts start",
+    "start": "react-scripts start",
     "start-prod": "REACT_APP_STAGE=prod react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
