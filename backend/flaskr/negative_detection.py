@@ -24,7 +24,7 @@ def is_extreme_negative(text, score):
 
     for word in NEGATIVE_KEY_WORDS:
 
-        if text.find(word) != 0:
+        if text.find(word) != -1:
             text_check = True
             break
 
