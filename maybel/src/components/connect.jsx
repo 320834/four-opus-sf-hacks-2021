@@ -17,9 +17,10 @@ export default class Connect extends React.Component {
   styles = {
     width: 600,
     defaultValue: "Hmm..",
-    fontSize: 45,
+    fontSize: 50,
     backgroundColor: "transparent",
     outline: "none",
+    padding: 10,
     marginLeft: "auto",
     marginRight: "auto",
     display: "block",
@@ -30,25 +31,18 @@ export default class Connect extends React.Component {
     marginBottom: 20,
   };
 
-  buttonStyle = {
-    borderColor: "transparent",
-    fontSize: 20,
-    textTransform: "uppercase",
-    backgroundColor: "transparent",
-    fontColor: "white",
-    outline: "none",
-  };
-
   enterKey = (event) => {
-    if (event.keyCode == 13 && event.shiftKey == false) {
+    if (event.keyCode === 13 && event.shiftKey === false) {
       event.preventDefault();
       this.getSentiment();
     }
   };
   getSentiment = async () => {
 
-    this.setState({quote: ""}, () => {
+    // Reset quote and input text
+    this.setState({quote: "", text: ""}, () => {
 
+      //Delay by 4 ms
       setTimeout(() => {
         callApi();
       }, 400)
@@ -84,11 +78,12 @@ export default class Connect extends React.Component {
     return (
       <div className="connect-root">
 
-          <h4>Tell us about your day</h4>
+          <h3>Tell us about your day</h3>
           <input
             type="text"
             placeholder="Type your feelings here"
             onKeyDown={this.enterKey}
+            value={this.state.text}
             onChange={(event) => {
               this.setState({ text: event.target.value });
             }}
