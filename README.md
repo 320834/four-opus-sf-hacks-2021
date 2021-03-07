@@ -1,6 +1,6 @@
-# four-opus-sf-hacks-2021
+# Maybel :star:
 
-SF-Hacks 2021 for team four opus
+Maybel - a room to escape, vibe, and relax
 
 # Installation
 
@@ -23,14 +23,16 @@ Make sure to add two .env files. One in root directory of backend and the other 
 If first time, create virtual environment in root directory
 
 1. python3 -m venv venv
-(Pro tip: if that doesn't work, try using py instead!)
+   (Pro tip: if that doesn't work, try using py instead!)
 
 To activate
 
 Windows
+
 1. venv\Scripts\activate.bat
 
 Linux/MacOS
+
 1. source venv/bin/activate
 
 2. install packages: pip install -r requirements.txt
