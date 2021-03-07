@@ -5,6 +5,7 @@ from flask_cors import CORS
 from flaskr.sentiment import sentiment_score
 from flaskr.quotes import create_quote
 from flaskr.google_sentiment import get_google_sentiment
+from flaskr.negative_detection import detect_negative
 
 def create_app(test_config=None):
     # create and configure the app
@@ -59,13 +60,15 @@ def create_app(test_config=None):
             text = data["text"]
             score_vader = sentiment_score(text)
             score_google = get_google_sentiment(text)
-            
+
             # Use vader sentiment and google sentiment and find average
             score = (score_vader + score_google)/2
-
             quote = create_quote(score)
+            resources = detect_negative(text, score)
 
-            return make_response(jsonify(score=score, quote=quote), 200)
+            print(score)
+
+            return make_response(jsonify(score=score, quote=quote, resources=resources), 200)
 
         return make_response(jsonify(score=0), 301)
 
