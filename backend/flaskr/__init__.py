@@ -9,8 +9,10 @@ from flaskr.negative_detection import detect_negative
 
 def create_app(test_config=None):
     # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
+
+    app = Flask(__name__,static_folder='../build', static_url_path='/', instance_relative_config=True)
     CORS(app)
+
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
@@ -28,9 +30,13 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+    
+    @app.route('/')
+    def index():
+        return app.send_static_file('index.html')
 
     # Landing page for the app
-    @app.route('/') # default route
+    @app.route('/view') # default route
     def new():
         score = ""
         return render_template('index.html', score=score) # Renders template: index.html with argument score = ""
