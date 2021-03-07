@@ -4,19 +4,31 @@ Maybel - a room to escape, vibe, and relax
 
 # Installation
 
-**Environment Variables**
-
-Make sure to add two .env files. One in root directory of backend and the other in frontend.
-
 ## Frontend (React)
 
-**Install npm, node, and python**
+**Environment Variables**
+
+Create .env file in maybel root. Ask team for info.
+
+**Install npm/yarn, node, and python**
 
 1. `cd maybel`
 2. `yarn`
 3. `yarn start`
 
 ## Backend (Python Flask)
+
+**Environment Variables**
+
+Create .env file in backend root. Ask team for info.
+
+**Google Cloud Credentials**
+
+1. Add google cloud json credentials in backend root.
+2. Set google json path
+   - Linux/MacOS Run `export GOOGLE_APPLICATION_CREDENTIALS="[PATH]"`
+   - Windows Powershell Run `$env:GOOGLE_APPLICATION_CREDENTIALS="[PATH]"`
+   - Windows Command Prompt `set GOOGLE_APPLICATION_CREDENTIALS=[PATH]`
 
 **Virtual env setup**
 

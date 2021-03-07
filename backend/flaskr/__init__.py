@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, jsonify, make_response
 from flask_cors import CORS
 from flaskr.sentiment import sentiment_score
 from flaskr.quotes import create_quote
+from flaskr.google_sentiment import get_google_sentiment
 
 def create_app(test_config=None):
     # create and configure the app
@@ -39,6 +40,7 @@ def create_app(test_config=None):
         if request.method == 'POST':
             text = request.form['text']  # Fetches data from <input name='text'> from index.html
             score = sentiment_score(text)
+            score_google = get_google_sentiment(text)
             quote = create_quote(score)
             
             return render_template('index.html', score=score, quote=quote)
@@ -55,7 +57,12 @@ def create_app(test_config=None):
         
         if("text" in data.keys()):
             text = data["text"]
-            score = sentiment_score(text)
+            score_vader = sentiment_score(text)
+            score_google = get_google_sentiment(text)
+            
+            # Use vader sentiment and google sentiment and find average
+            score = (score_vader + score_google)/2
+
             quote = create_quote(score)
 
             return make_response(jsonify(score=score, quote=quote), 200)

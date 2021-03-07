@@ -244,4 +244,9 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# Misc
 venv/
+
+googlecredentials.json
+
+run.bash
