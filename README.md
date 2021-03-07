@@ -30,6 +30,8 @@ Create .env file in backend root. Ask team for info.
    - Windows Powershell Run `$env:GOOGLE_APPLICATION_CREDENTIALS="[PATH]"`
    - Windows Command Prompt `set GOOGLE_APPLICATION_CREDENTIALS=[PATH]`
 
+Ex. export GOOGLE_APPLICATION_CREDENTIALS="./googlecredentials.json" (If in backend directory and the file is named googlecredentials.json)
+
 **Virtual env setup**
 
 If first time, create virtual environment in root directory

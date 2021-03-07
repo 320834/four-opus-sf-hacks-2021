@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from "react";
-// fontawesomeicon acts as a component
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -14,7 +13,7 @@ import chillHop from "../data";
 
 const Music = () => {
   // STATES
-  const [songs, setSongs] = useState(chillHop()); // Grab songs from data.js
+  const [songs] = useState(chillHop()); // Grab songs from data.js
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -23,7 +22,7 @@ const Music = () => {
   useEffect(() => {
     // make a new array of updated songs, changing the active attribute
     // [].map returns an array of returned objects
-    const newSongs = songs.map((s) => {
+    songs.map((s) => {
       console.log("lol");
       if (s.id === currentSong.id) {
         return { ...s, active: true };
