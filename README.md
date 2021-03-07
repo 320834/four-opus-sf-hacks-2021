@@ -57,7 +57,7 @@ Linux/MacOS
 
 1. Create a virutal environment with: `python3 -m venv venv` at the root directory
 2. Activate virutal environment
-   - _For Windows_ : `venv\Scripts\activate.bat`
+   - _For Windows_ : `venv\Scripts\activate`
    - _Linux/MacOS_ : `source venv/bin/activate`
 3. Install required pacakges with: `pip install -r requirements.txt`
 4. Should you install a pip package, update `requirements.txt` with: `pip freeze > requirements.txt`
