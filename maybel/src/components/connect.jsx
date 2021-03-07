@@ -1,6 +1,6 @@
 import React from "react";
 import BASE_URI from "../misc/setup";
-import logo from "../misc/sendIcon.png";
+import TextTransition from "react-text-transition";
 
 import "./styles/connect.css";
 
@@ -98,7 +98,14 @@ export default class Connect extends React.Component {
           <button onClick={this.getSentiment} type="button">
             Enter
           </button>
-          <div className="connect-quote fade-in"><b>{this.state.quote}</b></div>
+          <div className="connect-quote fade-in">
+            <b>
+              <TextTransition
+                text={this.state.quote}
+              >
+              </TextTransition>
+            </b>
+          </div>
 
       </div>
     );
