@@ -6,8 +6,8 @@ import JournalEnter from "./components/journalEnter";
 class App extends React.Component {
   render() {
     return (
-      <div class="app">
-        <Music></Music>
+      <div className="app">
+        <Music className="music"></Music>
         <Connect></Connect>
       </div>
     );
