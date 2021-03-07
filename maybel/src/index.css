@@ -1,3 +1,9 @@
+.html {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -16,10 +22,6 @@ body {
     url("https://source.unsplash.com/collection/2194996/2000x1100");
   background-size: 100% 100%;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 ::placeholder {
   color: white;
@@ -29,4 +31,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#root {
+  height: 100vh;
+  width: 100vw;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.player {
+  position: absolute;
+  top: 3vh;
+  left: 3vh;
 }
