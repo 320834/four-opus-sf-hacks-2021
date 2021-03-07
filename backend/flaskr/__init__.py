@@ -1,6 +1,6 @@
 import os
 import requests, json
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify, make_response
 from flaskr.sentiment import sentiment_score
 from flaskr.quotes import create_quote
 
@@ -43,5 +43,22 @@ def create_app(test_config=None):
 
         else:
             return render_template('index.html')
+
+
+    @app.route('/sentiment-json', methods=['POST'])
+    def jsonSentiment():
+
+        data = json.loads(request.data.decode("utf-8"))
+        data_json = request.get_json()
+        
+        if("text" in data.keys()):
+            text = data["text"]
+            score = sentiment_score(text)
+            # quote = "Some random quote"
+            quote = create_quote(score)
+
+            return make_response(jsonify(score=score, quote=quote), 200)
+
+        return make_response(jsonify(score=0), 301)
 
     return app
