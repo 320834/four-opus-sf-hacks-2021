@@ -1,15 +1,20 @@
 # four-opus-sf-hacks-2021
+
 SF-Hacks 2021 for team four opus
 
 # Installation
+
+**Environment Variables**
+
+Make sure to add two .env files. One in root directory of backend and the other in frontend.
 
 ## Frontend (React)
 
 **Install npm, node, and python**
 
-1. cd maybel
-2. yarn 
-3. yarn start
+1. `cd maybel`
+2. `yarn`
+3. `yarn start`
 
 ## Backend (Python Flask)
 
@@ -34,18 +39,31 @@ Linux/MacOS
 
 **Flask**
 
-**Run flask Linux**
+1. Create a virutal environment with: `python3 -m venv venv` at the root directory
+2. Activate virutal environment
+   - _For Windows_ : `venv\Scripts\activate.bat`
+   - _Linux/MacOS_ : `source venv/bin/activate`
+3. Install required pacakges with: `pip install -r requirements.txt`
+4. Should you install a pip package, update `requirements.txt` with: `pip freeze > requirements.txt`
+5. After updating `requirements.txt`, push file to repo
 
-export FLASK_APP=flaskr
+**Running the flask app**
 
-export FLASK_ENV=development
+1. `cd backend`
+2. Declare environment variables for Flask:
+   - _For Windows_:
+     - Command Prompt : `export FLASK_APP=flaskr` and `export FLASK_ENV=development`
+     - Power Shell : `$env:FLASK_APP= "flaskr"` and `$env:FLASK_ENV= "development"`
+   - _For Linux/MacOS_:
+     - `export FLASK_APP=flaskr` and `export FLASK_ENV=development`
+3. Run Flask app with: `flask run`
 
-flask run
+## Acknowledgements
 
-**Run flask windows**
+# Music
 
-set FLASK_APP=flaskr
+All music come from [ChillHop](https://chillhop.com/).
 
-set FLASK_ENV=development
+# Photos
 
-flask run
+All photos are hosted open-source from this [collection](https://unsplash.com/collections/2194996/june-2018) on [Unsplash](https://unsplash.com/).

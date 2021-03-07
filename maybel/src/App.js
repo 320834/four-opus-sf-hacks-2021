@@ -1,13 +1,20 @@
+import React from "react";
+import Connect from "./components/connect";
+import Music from "./components/Music";
 import JournalEnter from './components/journalEnter';
-import './App.css';
-import React from 'react';
-
-function App() {
-  return (
-    <React.Fragment>
-      <JournalEnter />
-    </React.Fragment>
-  );
+  
+class App extends React.Component {
+  render() {
+    return (
+      <div class="app">
+        <Music></Music>
+        <Connect></Connect>
+        <React.Fragment>
+          <JournalEnter />
+        </React.Fragment>
+      </div>
+    );
+  }
 }
 
 export default App;
