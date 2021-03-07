@@ -56,7 +56,6 @@ def create_app(test_config=None):
         if("text" in data.keys()):
             text = data["text"]
             score = sentiment_score(text)
-            # quote = "Some random quote"
             quote = create_quote(score)
 
             return make_response(jsonify(score=score, quote=quote), 200)

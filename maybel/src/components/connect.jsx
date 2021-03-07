@@ -17,7 +17,7 @@ export default class Connect extends React.Component {
   styles = {
     width: 600,
     defaultValue: "Hmm..",
-    fontSize: 50,
+    fontSize: 45,
     backgroundColor: "transparent",
     outline: "none",
     marginLeft: "auto",
@@ -46,34 +46,44 @@ export default class Connect extends React.Component {
     }
   };
   getSentiment = async () => {
-    let myHeaders = new Headers();
-    myHeaders.append("content-type", "application/json");
-    myHeaders.append("Access-Control-Allow-Origin", "localhost:5000");
 
-    let raw = JSON.stringify({ text: this.state.text });
+    this.setState({quote: ""}, () => {
 
-    let requestOptions = {
-      method: "POST",
-      headers: myHeaders,
-      body: raw,
-    };
+      setTimeout(() => {
+        callApi();
+      }, 400)
+    });
 
-    //BASE_URI defined in misc/setup.js
-    fetch(`${BASE_URI}/sentiment-json`, requestOptions)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        this.setState({ score: data["score"], quote: data["quote"] });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const callApi = () => {
+      let myHeaders = new Headers();
+      myHeaders.append("content-type", "application/json");
+      myHeaders.append("Access-Control-Allow-Origin", "localhost:5000");
+
+      const raw = JSON.stringify({ text: this.state.text });
+
+      const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+      };
+
+      //BASE_URI defined in misc/setup.js
+      fetch(`${BASE_URI}/sentiment-json`, requestOptions)
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          this.setState({ score: data["score"], quote: data["quote"] });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      }
   };
 
   render() {
     return (
       <div className="connect-root">
-        <div>
+
           <h4>Tell us about your day</h4>
           <input
             type="text"
@@ -88,8 +98,8 @@ export default class Connect extends React.Component {
           <button onClick={this.getSentiment} type="button">
             Enter
           </button>
-          <div>{this.state.quote}</div>
-        </div>
+          <div className="connect-quote fade-in"><b>{this.state.quote}</b></div>
+
       </div>
     );
   }
