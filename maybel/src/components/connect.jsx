@@ -80,7 +80,7 @@ export default class Connect extends React.Component {
           </h4>
           <input
             type="text"
-            placeholder="how am I feeling..?"
+            placeholder="Try typing your feelings here"
             onKeyDown={this.enterKey}
             onChange={(event) => {
               this.setState({ text: event.target.value });
@@ -89,7 +89,7 @@ export default class Connect extends React.Component {
             style={this.styles}
           />
           <button onClick={this.getSentiment} type="button">
-            <img src={logo} alt="Send" width="22" height="22" padding="-10" />
+            Enter
           </button>
           <div>{this.state.quote}</div>
         </div>
