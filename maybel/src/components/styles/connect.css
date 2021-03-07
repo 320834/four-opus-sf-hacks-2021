@@ -1,22 +1,18 @@
 .connect-root {
-    width: 100%;
-    height: 100%;
-
-
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .connect-root div {
-    width: 100%;
-    height: 100%;
-    display: block;
-    align-content: center;
-    text-align: center;
-
-    align-content: right;
-
-    
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .connect-root div div {
-    margin: 20px 0px 0px 0px;
+  margin: 20px 0px 0px 0px;
 }
