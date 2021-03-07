@@ -61,4 +61,7 @@ def create_app(test_config=None):
 
         return make_response(jsonify(score=0), 301)
 
+    @app.route('/chatbox', methods=['GET', 'POST'])
+    def chatbox():
+        return render_template('chatbox.html')
     return app
